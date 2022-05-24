@@ -1,0 +1,27 @@
+problem number -2 Find Nth power of a number
+https://www.codingninjas.com/codestudio/problems/find-power-of-a-number_893198?source=youtube&campaign=Recursion_Fraz&utm_source=youtube&utm_medium=affiliate&utm_campaign=Recursion_Fraz
+
+1st approch
+long long Pow(int X, int N)
+{
+    // Write your code here. 
+    if(N==0) return 1;
+    long long partial_ans=Pow(X,N-1);
+    return X*partial_ans;
+}
+T.c :-O(n)
+S.c :-O(n)
+
+
+2nd approch
+long long Pow(int X, int N)
+{
+    // Write your code here. 
+    if(N==0) return 1;
+    long long temp = Pow(X,N/2);
+    if(N%2==1) return temp*temp*X;
+    return temp*temp;
+}
+
+T.c :- O(logn)
+S.c :- O(logn)
